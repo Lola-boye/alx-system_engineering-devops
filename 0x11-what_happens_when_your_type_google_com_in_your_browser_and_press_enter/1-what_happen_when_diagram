@@ -1,0 +1,9 @@
+Browser -- DNS Resolution --> DNS Servers
+DNS Servers -- Resolves IP Address --> Firewall
+Firewall -- Allows Traffic --> Load Balancer
+Load Balancer -- Distributes Traffic --> Web Server
+Web Server -- Serves Web Page --> Application Server
+Application Server -- Requests Data --> Database
+Database -- Retrieves Data --> Application Server
+Application Server -- Generates Web Page --> Web Server
+Web Server -- Sends Web Page --> Browser

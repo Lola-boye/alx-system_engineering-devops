@@ -1,0 +1,30 @@
+**To answer this question in a simple and detailed manner, let's take a look at this word called server, which we would use a lot in this article**
+
+# What's a Server?
+A server is a computer program or device that provides a service to another computer program and its user, also known as the client. This architecture is called the client-server model.
+
+## The client-server model
+The client is typically the 'thing' requesting information. Typically clients are the web user's internet-connected devices, such as our computer, laptop, or phone connected to Wi-Fi or mobile network — and web-accessing software available on those devices or browsers like Google Chrome, Firefox, Safari. In our example, the client is, in fact, the browser and the device we are using to type in www.google.com
+
+**Server** is the 'thing' sending or serving information to the client. They store webpages, sites, or apps. In our example, it would be the google server.
+
+When a client device wants to access a webpage, it requests a copy of the webpage from the server, which is then downloaded onto the client to be displayed in the user's web browser.
+
+## The Phonebook of the Internet
+When we type the website name or address — or more technically called a URL, https://www.google.com into our browser and press Enter, the first thing the browser does is to break down the URL into pieces — and for that, we need **Domain Name System (DNS) servers!** But first...
+
+### What's a URL?
+URL stands for Uniform Resource Locator and is used to access a website. There are several parts in a URL: the protocol, hostname, port, path-and-file-name, and more. For this blog post, we will look at the protocol and hostname. In the case of https://www.google.com: https is the protocol (more on that later), and www.google.com is the hostname, which can be a domain like in this case or also an IP address.
+
+## DNS
+Think of the Domain Name System (DNS) like the phonebook of the internet! DNS servers are application servers that convert domain names, easily understood by humans, into machine-readable IP addresses. Each device connected to the internet has a unique IP address that other machines use to find the device. 
+
+This process called DNS resolution or DNS lookup has 4 steps (and servers) involved in loading a webpage:
+
+1. **DNS recursor** is the first stop. It's a server designed to receive queries from clients through applications such as web browsers. If this server already has the IP address stored in cache, it will simply return it back. Otherwise, it'll be responsible for making additional requests by sending a query to the root DNS server.
+2. The **root server** or root nameserver doesn't have information about the hostname, but it has information on where to find it, so it will refer the requests to the appropriate TLD server.
+3. The **TLD (Top-Level Domain)** is the next step in the search for a specific IP address, and it hosts the last portion of a hostname. In google.com, the TLD server is "com". The request is then sent to the authoritative nameserver.
+4. The **Authoritative nameserver** is the last stop in the nameserver query. If this server has access to the requested record, it will return the IP address for the requested hostname back to the DNS recursor that made the initial request — otherwise, it will send an error saying the record couldn't be found.
+
+## Internet Protocol Suite
+Finally, the browser knows where to find www.google.com, and it's now time to make a connection to access the requested website. Browsers use internet protocols to build such connections
